@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{
+ margin:auto;
+  padding:0px;
+  font-family:sans-serif;
+ 
+}
+
+img{
+margin:auto;
+align-self: center;
+}
+.textfont{
+color:white;
+
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 300px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.content{
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+}
+
+.settingslist{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.androidsensors{
+    
+    
+    grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 300px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.sensoraway{
+    grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 8;
+  grid-row-end: 9;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+
+.sensornear{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 8;
+  grid-row-end: 9;
+border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+
+}
+
+.dotmatapp{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 10;
+  grid-row-end: 11;
+border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+#left{
+
+width:100%;height:300%;margin:auto;
+background:  url("cct3.png") repeat top left;
+background-attachment:fixed;
+}
+
+
+
+#sidebar {
+  position:fixed;
+  width: 200px;
+  height: 100%;
+  background:#3219;
+  left: -200px;
+  
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  color:rgba(230,230,230,0.9);
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  margin: 4px 0px;
+transition:all 300ms ease-in-out;
+}
+#sidebar .toggle-btn:hover {
+  width: 60px;
+  height: 60px;
+  margin:auto;
+  background-color: brown;
+  border:2px solid black;
+  border-radius:9px;
+}
+
+.settingslist:hover{
+background: #8219;
+
+}
+.androidsensors.hover{
+background: #8219;
+
+
+}
+.sensoraway:hover{
+background: #8219;
+
+}
+.sensornear:hover{
+background: #8219;
+
+}
+.dotmatapp:hover{
+background: #8219;
+scroll-margin-block-end: top;
+}
+</style>
+</head>
+<body>
+
+
+<div id="left">
+<center><h1>ANDROID PROJECTS</h1></center>
+<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <a href="main.html"><li>Home</li></a>
+    <a href="stm32.html"><li>stm32 projects</li></a>
+    <a href="ledmatrixpage.html"><li>led matrix projects</li></a>
+    <a href="esp projects.html"><li>esp8266 wifi projects</li></a>
+  </ul>
+</div>
+<div class="grid-container">
+<div class="content">
+<center><img src="./list3.png" alt="image not available" style="width:60%;height:50%;"></center>
+
+</div>
+
+<div class="settingslist">
+    <h1>android sensors</h1>
+<center>
+    <p>This is a simple example of an android 
+    application that list sensors in a smartphone.
+    Below the list is a test for proximity detector.
+</p>
+</center>
+</div>
+<div class="androidsensors">
+    
+   
+        
+</div>
+<div class="sensoraway">
+
+  <center>
+  <img src="./sensors_away.png" alt="image not available" style="width:80%;height:80%;">
+  
+  </center>
+  <center><p class="textfont">when an object is not detected </p></center>
+  </div>
+  <div class="sensornear">
+  
+    <center>
+    <img src="./sensors_near.png" alt="image not available" style="width:80%;height:80%;">
+    </center>
+  </center>
+  <center><p class="textfont"> when an object is detected </p></center>
+    </div>
+  <div class="dotmatapp">
+    <b><h>DOTMATRIX APPLICATION</h></b>
+    <p>
+    This is a android application that controls an LED matrix panel and also creates different characters
+    check <a href="ledmatrixpage.html">LED MATRIX PROJECT</a>
+  </p>
+      <center>
+        <img src="./Dotmatrixapp.png" alt="image not available" style="width:30%;height:40%;">
+        </center> 
+      </div>
+</div> 
+</div>
+<script type="text/javascript">
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+</script>
+
+</body>
+</html>

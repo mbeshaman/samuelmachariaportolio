@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{
+ margin:auto;
+  padding:0px;
+  font-family:sans-serif;
+ 
+}
+
+img{
+margin:auto;
+align-self: center;
+}
+.textfont{
+color:white;
+
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 300px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.content{
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+}
+
+.usbasp1{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.usbasp2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+
+.usbasp3{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+
+}
+.usbasp4{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 6;
+border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.usbasp5{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 7;
+border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+#left{
+
+width:100%;height:300%;margin:auto;
+background:  url("cct3.png") repeat top left;
+background-attachment:fixed;
+}
+
+
+
+#sidebar {
+  position:fixed;
+  width: 200px;
+  height: 100%;
+  background:#3219;
+  left: -200px;
+  
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  color:rgba(230,230,230,0.9);
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  margin: 4px 0px;
+transition:all 300ms ease-in-out;
+}
+#sidebar .toggle-btn:hover {
+  width: 60px;
+  height: 60px;
+  margin:auto;
+  background-color: brown;
+  border:2px solid black;
+  border-radius:9px;
+}
+
+.usbasp1:hover{
+background: #8219;
+
+}
+.usbasp2:hover{
+background: #8219;
+
+
+}
+.usbasp3:hover{
+background: #8219;
+
+}
+.usbasp4:hover{
+background: #8219;
+
+}
+.usbasp5:hover{
+background: #8219;
+scroll-margin-block-end: top;
+}
+</style>
+</head>
+<body>
+
+
+<div id="left">
+<center><h1>AVRDUDE programmer</h1></center>
+<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <a href="main.html"><li>Home</li></a>
+    <a href="stm32.html"></a><li>stm32 projects</li></a>
+    <a href="ledmatrixpage.html"><li>led matrix projects</li></a>
+    <a href="esp projects.html"><li>esp8266 wifi projects</li></a>
+    <a href="nrf24page.html"><li>nrf24l01 projects</li></a>
+  </ul>
+</div>
+<div class="grid-container">
+<div class="content">
+<center><img src="./progcc2.png" alt="image not available" style="width:70%;height:50%;"></center>
+<h1>usbasp programmer</h1>
+<p>Interface between a computer and an AVR microcontroller requires a USB to TTL converter.This is because most AVR microcontrollers have
+do not have inbuilt USB hardware. However the hardware  USB function can be emulated by firmware written into the bootloader section of flash memory 
+thus the bootloader can be used to program the flash memory. A condition can be set to switch between bootloader program and main program.
+In the above circuit pin PD7 is grounded before resetting the microcontroller.This initiates the bootloader program.
+The programming is done by AVRDUDE commands.
+Since the programming port does not display in arduino ide the GUI application below would be necessary.
+the application can be used with arduino module,standalone chip or even a remote programmer.
+The application is designed for both Linux and Windows environment.
+</p>
+</div>
+
+<div class="usbasp1">
+<center>
+<a href="main.html"><img src="./usb.png" alt="image not available" style="width:60%;height:60%;">
+</a>
+</center>
+
+<center><p class="textfont">port selection for the programmer application </p></center>
+</div>
+<div class="usbasp2">
+<center>
+<a href="main.html"><img src="./usb2.png" alt="image not available" style="width:80%;height:80%;">
+</a>
+</center>
+
+<center><p class="textfont">device selection</p></center>
+</div>
+<div class="usbasp3">
+
+<center>
+<img src="./usb3.png" alt="image not available" style="width:80%;height:80%;">
+
+</center>
+<center><p class="textfont">programmer selection </p></center>
+</div>
+<div class="usbasp4">
+<b><h>microcontroller detection debugging messages</h></b>
+<p>The GUI application is designed using java in Processing ide. The AVRDUDE commands are sent through java runtime environment.  </p>
+  <center>
+  <img src="./detected.png" alt="image not available" style="width:80%;height:60%;">
+  </center>
+
+  </div>
+
+  <div class="usbasp5">
+    <b><h>ESP8266 AVRISP</h></b>
+    <p>esp8266avrisp allows programming AVR microcontrollers wirelessly as shown.The port is different from avrisp,for example when using arduino the COM port would be something like COM1 in windows OS or /dev/ttyACM0 in Linux environment 
+      in esp8266avrisp the port as shown is net:192.168.4.1 which is the IP address of the esp module.
+    </p>
+      <center>
+        <img src="./netprog.png" alt="image not available" style="width:80%;height:60%;">
+        </center> 
+      </div>
+</div> 
+</div>
+<script type="text/javascript">
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+</script>
+
+</body>
+</html>

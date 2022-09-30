@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=3.0" />
+<style type="text/css">
+*{
+ margin:auto;
+  padding:0px;
+  font-family:sans-serif;
+ 
+}
+
+img{
+margin:auto;
+align-self: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.content{
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+background: rgba(100, 90, 80, 0.6);
+}
+
+.displayprojects{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.androidapp{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.androidapp2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.androidapp3{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  border-radius:9px;
+border:2px solid black;
+background: rgba(100, 90, 80, 0.6);
+}
+.androidapp4{
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.morepicstitle{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(148, 93, 37, 0.6);
+}
+.morepics{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 8;
+  grid-row-end: 9;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.matrix2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 8;
+  grid-row-end: 9;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+#left{
+
+width:100%;height:300%;margin:auto;
+background:  url("cct3.png") repeat top left;
+background-attachment:fixed;
+}
+
+
+
+#sidebar {
+  position:fixed;
+  width: 200px;
+  height: 100%;
+  background:#3219;
+  left: -200px;
+  
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  color:rgba(230,230,230,0.9);
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(206, 9, 9);
+  margin: 4px 0px;
+transition:all 300ms ease-in-out;
+}
+#sidebar .toggle-btn:hover {
+  width: 60px;
+  height: 60px;
+  margin:auto;
+  background-color: brown;
+  border:2px solid rgb(24, 19, 19);
+  border-radius:9px;
+}
+
+.displayprojects:hover{
+background: #8219;
+
+}
+.androidapp:hover{
+background: #8219;
+
+}
+.androidapp2:hover{
+background: #8219;
+
+}
+.androidapp3:hover{
+background: #8219;
+
+}
+.androidapp4:hover{
+background: #8219;
+
+}
+.morepicstitle:hover{
+  background: #8219;
+}
+.morepics:hover{
+  background: #8219;
+
+}
+.matrix2:hover{
+  background: #8219;
+
+}
+</style>
+</head>
+<body>
+
+
+<div id="left">
+
+<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <a href="main.html"><li>Home</li></a>
+    <a href="stm32.html"></a><li>stm32 projects</li></a>
+    <a href="ledmatrixpage.html"><li>led matrix projects</li></a>
+    <a href="usbaspprojects.html"><li>avr programmer projects</li></a>
+    <a href="nrf24page.html"><li>nrf24l01 projects</li></a>
+  </ul>
+</div>
+<div class="grid-container">
+<div class="content">
+  <center><h1>LED MATRIX PROJECTS</h1></center> 
+  <video 
+  controls 
+  src="./dotmatrixvid.mp4" 
+  id="video-stream" 
+  poster="./dotmatrix.png"
+  width="100%"
+  height="30%">
+</video>
+</div>
+
+<div class="displayprojects">
+<center>
+  <h1>led matrix display</h1>
+  <p>the 8x8 matrix display is based on MAX7221 decoder IC. The LEDs can be of different colours.
+    Several matrices can be daisy chained to create a bigger display.
+    The message displayed on the led matrix can be updated wirelessly by means of a smartphone application.
+  
+  </p>
+
+</center>
+</div>
+
+
+<div class="androidapp">
+  <img src="letterA.png" alt="image not available" style="border-radius: 20px; width:90%; height:90%">
+  <p>create character tab</p>
+</div>
+<div class="androidapp2">
+  <img src="Dotmatrixapp.png" alt="image not available" style="border-radius: 20px;width:90%; height:90%">
+  <p>message settings of the dotmatrix app</p>
+</div>
+<div class="androidapp3">
+  <img src="dotmatrix3.png" alt="image not available" style="border-radius: 20px;width:90%; height:90%">
+  <p>home tab of the dotmatrix app</p>
+</div>
+<div class="androidapp4">
+  <img src="letterC.jpg" alt="image not available" style="border-radius: 20px;width:90%; height:90%">
+<p>leter C created by four 8x8 modules</p>
+</div>
+<div class="morepicstitle">
+  <p>The MAX7221 decoders are connected to an ESP32 module or atmega2560 microcontroller</p>
+</div>
+<div class="morepics">
+  <img src="matrixpcb.jpg" alt="image not available" style="border-radius: 20px;width:90%; height:90%">
+  <p>8x8 led matrix circuit pcb</p>
+</div>
+<div class="matrix2">
+  <video 
+  controls 
+  src="./dotmatrix2.mp4" 
+  id="video-stream" 
+  poster="./dotmatrix.png"
+  width="100%"
+  height="100%">
+</video>
+
+</div>
+</div>
+
+</div>
+<script type="text/javascript">
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+</script>
+
+</body>
+</html>

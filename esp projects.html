@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{
+ margin:auto;
+  padding:0px;
+  font-family:sans-serif;
+ 
+}
+
+img{
+margin:auto;
+align-self: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 300px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.content{
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+}
+
+.espnode{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  border-radius:9px;
+border:2px solid black;
+
+background: #3219;
+}
+.serialmonitor {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  border-radius:9px;
+border:2px solid black;
+
+background: #3219;
+}
+
+.espnow{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start:6;
+  grid-row-end: 7;
+border-radius:9px;
+border:2px solid black;
+
+background: #3219;
+
+
+}
+.esp_avrisp{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start:7;
+  grid-row-end: 8;
+border-radius:9px;
+border:2px solid black;
+
+background: #3219;
+
+
+}
+#left{
+
+width:100%;height:300%;margin:auto;
+background:  url("cct3.png") repeat top left;
+background-attachment:fixed;
+
+}
+
+
+
+#sidebar {
+  position:fixed;
+  width: 200px;
+  height: 100%;
+  background:#3219;
+  left: -200px;
+  
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  color:rgba(230,230,230,0.9);
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: rgb(163, 6, 6);
+  margin: 4px 0px;
+transition:all 300ms ease-in-out;
+}
+#sidebar .toggle-btn:hover {
+  width: 60px;
+  height: 60px;
+  margin:auto;
+  background-color: brown;
+  border:2px solid black;
+  border-radius:9px;
+}
+
+.espnode:hover{
+background: #8219;
+
+}
+.serialmonitor:hover{
+background: #8219;
+
+
+}
+.espnow:hover{
+background: #8219;
+
+}
+.esp_avrisp:hover{
+background: #8219;
+
+}
+</style>
+</head>
+<body>
+
+
+<div id="left">
+<center><h1>esp projects</h1></center>
+<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <a href="main.html"><li>Home</li></a>
+    <a href="stm32.html"></a><li>stm32 projects</li></a>
+    <a href="ledmatrixpage.html"><li>led matrix projects</li></a>
+    <a href="usbaspprojects.html"><li>avr programmer projects</li></a>
+    <a href="nrf24page.html"><li>nrf24l01 projects</li></a>
+  </ul>
+</div>
+<div class="grid-container">
+<div class="content">
+<center><img src="./espnowmac.png" alt="image not available" style="width:80%;height:50%;"></center>
+
+<center><b><h>ESP NOW PROJECT</h></b></center>
+<center><p>ESP NOW is a connectionless communication protocol that is used for sharing small data packets between two ESP boards developed by ESPRESSIF.It 
+  offers a persistent connection between ESP nodes,this means once two ESP nodes are connected with each other (wirelessly) and suddenly one of the ESP devices loses poweror restarted,the device will again
+  (automatically) establish a connection with the other node to which it was connected before the power-reset.
+</p></center>
+</div>
+
+<div class="espnode">
+<center>
+<img src="./serial_out.png" alt="image not available" style="width:60%;height:60%;">
+
+</center>
+
+<center><p>espnow node </p></center>
+</div>
+<div class="serialmonitor">
+<center>
+<p><img src="./Serial_msgs.png" alt="image not available" style="width:90%;height:80%;">
+</p>
+</center>
+
+<center><h>serial messages from both nodes</h></center>
+<p>The above image shows messages from a node connected to arduino(/dev/ttyACM0) and another node
+   conneced to FTDI usb to serial converter(/dev/ttyUSB0).
+</p>
+</div>
+<div class="espnow">
+
+  <center> <video 
+    controls 
+    src="./serial_monitor.mp4" 
+    id="video-stream" 
+    poster="./esp8266_cct2.PNG"
+    width="80%"
+    height="30%">
+  </video></center>
+<center><p>One node sends its MAC address to the other node which responds by  sending its own MAC address back to the first node.
+</p></center>
+</div>
+<div class="esp_avrisp">
+  <h>esp8266 avrisp programming</h>
+  <img src="./IMG.png" alt="image not available" style="width:90%;height:80%;">
+  <p>the above image shows connection between ESP12 circuit and AVR circuit to achieve wireless programming. 
+    The ESP and AVR are linked via SPI Interface.
+  The programming port in this case is not something like COM7 as commonly used its net:192.168.4.1.
+esp8266avrisp programming can be done by using arduino ide or a custom application <a href="usbaspprojects.html">AVR PROGRAMMER BY SAMUEL MACHARIA</a>
+</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{
+ margin:auto;
+  padding:0px;
+  font-family:sans-serif;
+ 
+}
+
+img{
+margin:auto;
+align-self: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 300px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.content{
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+background: rgba(100, 90, 80, 0.6);
+}
+.details{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+background: rgba(100, 90, 80, 0.6);
+}
+.nrf24projects{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.nrf24projects1 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+
+
+
+#left{
+
+width:100%;height:300%;margin:auto;
+background:  url("cct3.png") repeat top left;
+background-attachment:fixed;
+}
+
+
+
+#sidebar {
+  position:fixed;
+  width: 200px;
+  height: 100%;
+  background:#3219;
+  left: -200px;
+  
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  color:rgba(230,230,230,0.9);
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  margin: 4px 0px;
+transition:all 300ms ease-in-out;
+}
+#sidebar .toggle-btn:hover {
+  width: 60px;
+  height: 60px;
+  margin:auto;
+  background-color: brown;
+  border:2px solid black;
+  border-radius:9px;
+}
+
+.nrf24projects:hover{
+background: #8219;
+
+}
+
+.nrf24projects1:hover{
+background: #8219;
+
+}
+.details{
+  background: #8219;
+}
+</style>
+</head>
+<body>
+
+
+<div id="left">
+      <center><h1>NRF24L01 PROJECTS</h1></center>
+  <div id="sidebar">
+    <div class="toggle-btn" onclick="toggleSidebar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+   <ul>
+    <a href="main.html"><li>Home</li></a>
+    <a href="stm32.html"></a><li>stm32 projects</li></a>
+    <a href="ledmatrixpage.html"><li>led matrix projects</li></a>
+    <a href="usbaspprojects.html"><li>avr programmer projects</li></a>
+   </ul>
+  </div>
+  <div class="grid-container">
+   <div class="content">
+   <img src="./nrf24.png" alt="image not available" style="width:80%;height:80%;">
+
+  </div>
+  <div class="details">
+    <p>Nrf24 is a wireless transceiver suitable for establishing wireless communication between devices.
+    one module can be designated as client and the other as server.
+    Five clients can be connected to one server.
+    From the above picture the client 1 sends "hello world" message to server and in return the server sends message "hello back" 
+    </p>
+  </div>
+  <div class="nrf24projects">
+    <img src="./nrf.png" alt="image not available" style="width:60%;height:60%;">
+    <center><p>nrf24 projects </p></center>
+  </div>
+  <div class="nrf24projects1">
+
+    <img src="./rf24module.PNG" alt="image not available" style="width:80%;height:80%;">
+    <center><p>rf24 module</p></center>
+  </div>
+
+
+</div>
+<script type="text/javascript">
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+</script>
+
+</body>
+</html>

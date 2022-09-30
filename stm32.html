@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+*{
+ margin:auto;
+  padding:0px;
+  font-family:sans-serif;
+ 
+}
+
+img{
+margin:auto;
+align-self: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 100px 300px;
+  gap: 10px;
+  
+  padding: 10px;
+}
+
+.grid-container > div {
+
+  text-align: center;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.content{
+
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+border-radius:5px;
+border:2px solid black;
+margin:auto;
+}
+
+.stm32andlcd{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+.freertos{
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  border-radius:9px;
+border:2px solid black;
+
+background: rgba(100, 90, 80, 0.6);
+}
+
+
+
+#left{
+
+width:100%;height:300%;margin:auto;
+background:  url("cct3.png") repeat top left;
+background-attachment:fixed;
+}
+
+
+
+#sidebar {
+  position:fixed;
+  width: 200px;
+  height: 100%;
+  background:#3219;
+  left: -200px;
+  
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+#sidebar ul li {
+  color:rgba(230,230,230,0.9);
+  list-style:none;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  left: 230px;
+  top: 20px;
+  
+}
+
+#sidebar .toggle-btn span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  background-color: black;
+  margin: 4px 0px;
+transition:all 300ms ease-in-out;
+}
+#sidebar .toggle-btn:hover {
+  width: 60px;
+  height: 60px;
+  margin:auto;
+  background-color: brown;
+  border:2px solid black;
+  border-radius:9px;
+}
+
+.stm32andlcd:hover{
+background: #8219;
+
+}
+
+.freertos:hover{
+background: #8219;
+
+}
+</style>
+</head>
+<body>
+
+
+<div id="left">
+<center><h1>stm32 projects</h1></center>
+<div id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <a href="main.html"><li>Home</li></a>
+    <a href="esp projects.html"><li>esp8266 wifi projects</li></a>
+    <a href="ledmatrixpage.html"><li>led matrix projects</li></a>
+    <a href="usbaspprojects.html"><li>avr programmer projects</li></a>
+    <a href="nrf24page.html"><li>nrf24l01 projects</li></a>
+  </ul>
+</div>
+<div class="grid-container">
+<div class="content">
+<center> <video 
+  controls 
+  src="./stm32freqgenerator.mp4" 
+  id="video-stream" 
+  poster="./waveform.jpg"
+  width="100%"
+  height="20%">
+</video></center>
+
+<center><h1>50hz signal generator using timers</h1></center>
+<p>stm32 is an ARM based 32 bit family of microcontrollers.
+  it offers very high performance,real time capabilities,
+  digital signal processing low power/low voltage operation and connectivity while maintaining full integration and ease of development.
+in the above example a timer is used to generate a pwm signal of 50hz with a duty cycle of 50%.
+This is suitable for controlling a servo motor .
+</p>
+</div>
+
+<div class="stm32andlcd">
+
+  <center> <video 
+    controls 
+    src="./12clcdwithstm32.mp4" 
+    id="video-stream" 
+    poster="./waveform.jpg"
+    width="100%"
+    height="100%">
+  </video></center>
+<p>LCD modules require 4 data pins,three control pins when used in 4 bit mode.
+  In order to save a few GPIO pins we can use a 12c adapter.12c only requires 2 pins SDA and SCL.</p>
+</div>
+<div class="freertos">
+
+   <video 
+    controls 
+    src="./stm32_freertos.mp4" 
+    id="video-stream" 
+    poster="./waveform.jpg"
+    width="100%"
+    height="100%">
+  </video>
+
+<p>freertos is an operating system that enables two or more tasks to run at the same time.
+  For example in the above video one LED blinks with a delay of three seconds and another blinks with a delay of one second.
+</p>
+
+</div>
+
+</div>
+</div>
+<script type="text/javascript">
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle('active');
+  
+}
+</script>
+
+</body>
+</html>
